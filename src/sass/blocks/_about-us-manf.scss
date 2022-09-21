@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .manf {
   padding: 90px 0;
   background: #0c478b;
@@ -152,7 +151,7 @@
     font-size: 16px;
     line-height: 184%;
   }
-=======
+}
 .manf{
     padding: 90px 0;
     background: #0C478B;
@@ -170,9 +169,6 @@
     &__row{
         display: flex;
         justify-content: center;
-        &:first-child{
-            
-        }
     }
     &__item{
         display: flex;
@@ -199,11 +195,9 @@
                 background-size: contain;
                 background-repeat: no-repeat;
             }
-            img{
-            }
         }
     }
-}
+} 
 @media(max-width:1200px){
     .manf{
         .manf__item-img {
@@ -284,5 +278,4 @@
         font-size: 16px;
         line-height: 184%;
     }
->>>>>>> a2a79a9278b79dbef5dcdfbe6d5c2c856cafa67e
 }
