@@ -30,7 +30,7 @@
   &__title {
     font-family: "Montserrat";
     font-weight: 600;
-    font-size: 44px;
+    font-size: 2.75rem;
     line-height: 54px;
 
     color: #fdce25;
@@ -40,7 +40,7 @@
     position: relative;
     font-family: "Open Sans";
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 22px;
     padding-left: 55px;
 
@@ -233,6 +233,20 @@ section.neo-fiscal-video-slider {
     }
     #scvPrev {
       left: 5%;
+    }
+  }
+  .neo-fiscal-convenience__title {
+    font-size: 1.875rem;
+  }
+  #dn430 {
+    display: none;
+  }
+  .neo-fiscal-rongta__title {
+    font-size: 1.625rem;
+  }
+  .geography__wrapper.manf {
+    .manf__item {
+      margin: 10px 0;
     }
   }
 }
