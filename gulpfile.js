@@ -28,6 +28,25 @@ gulp.task('styles', function() {
         .pipe(browserSync.stream());
 });
 
+const { task } = require('gulp');
+
+const clean = function(cb) {
+  // body omitted
+  cb();
+};
+clean.displayName = 'clean:all';
+
+task(clean);
+
+function build(cb) {
+  // body omitted
+  cb();
+}
+build.description = 'Build the project';
+build.flags = { '-e': 'An example flag' };
+
+task(build);
+
 gulp.task('watch', function() {
     gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
     gulp.watch("src/*.html").on('change', gulp.parallel('html'));
