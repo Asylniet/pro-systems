@@ -1,0 +1,44 @@
+.bs-comfort {
+    padding: 110px 0;
+    &__title {
+        margin-bottom: 30px;
+    }
+    &__text {
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #000000;
+        max-width: 930px; margin: 0 auto;
+        margin-bottom: 45px;
+    }
+    &__img {
+        position: relative;
+        margin: 0 auto;
+        max-width: max-content;
+        &-zoom {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .bs-comfort {
+        padding: 50px 0;
+        &__text {
+            font-size: 12px;
+            line-height: 141.7%;
+        }
+        &__img {
+            img {
+                max-width: 225px;
+            }
+            &-zoom {
+                bottom: 20px;
+            }
+        }
+    }
+}

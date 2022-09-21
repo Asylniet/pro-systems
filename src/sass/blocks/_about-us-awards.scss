@@ -1,0 +1,108 @@
+.awards {
+    .mob-switch__nav{
+        display: none;
+    }
+    background: #F5F5F5;
+    position: relative;
+    padding: 110px 0;
+    &__abs{
+        position: absolute;
+        right: 70px;
+        top: 35px;
+    }
+    &__title{
+        margin-bottom: 75px;
+    }
+    .container{
+        position: relative;
+    }
+    &__slider {
+        width: 100%;
+        height: 350px;
+    }
+    &__slide {
+        display: grid;
+        place-content: center;
+        align-self: center;
+    }
+    &__wrapper {
+        position: relative;
+        width: 100%;
+    }
+    .swiper {
+        &-slide{
+            width: 100%;
+            img{
+                opacity: 0.5;
+                transform: scale(.4);
+                transition: all .3s;
+            }
+        }
+        &-slide-active{
+            width: 100%;
+            img{
+                opacity: 1;
+                width: 500px;
+                transform: scale(1);
+            }
+        }
+        &-button {
+            &-prev {
+                left: 0;
+            }
+            &-next {
+                right: 0;
+            }
+            &-prev, &-next {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:685px){
+    .awards__abs{
+        display: none;
+    }
+    .awards__wrapper{
+        position: relative;
+    }
+    .awards__slider{
+        height: 100%;
+    }
+    .awards .swiper-slide-active img {
+        opacity: 1;
+        width: 100%;
+        height: 250px;
+        transform: scale(.9);
+    }
+}
+@media(max-width:475px){
+    .awards .swiper-slide-active img {
+        height: 200px;
+    }
+    .awards{
+        .swiper-button-prev {
+            display: none;
+            position: static;
+        }
+        .swiper-button-next {
+            display: none;
+            position: static;
+        }
+        .mob-switch__nav{
+            display: flex;
+            max-width: 93px;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            height: 27px;
+            margin-top: 50px;
+            .swiper-button-prev, .swiper-button-next{
+                display: block !important;
+            }
+        }
+    }
+}

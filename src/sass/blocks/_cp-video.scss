@@ -1,0 +1,37 @@
+.video{
+    &__home{
+        padding: 100px 0 70px;
+    }
+    &__title{
+        color: #0C478B;
+        margin-bottom: 75px;
+    }
+    iframe, video{
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 715px;
+        height: 415px;
+        border-radius: 30px 30px 30px 30px;
+    }
+}
+
+@media (max-width: 767px){
+    .video {
+        &__title {
+            margin-bottom: 40px;
+        }
+        &__wrap {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
+
+        }
+        iframe, video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

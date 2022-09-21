@@ -1,0 +1,110 @@
+.offer {
+    background: url('../img/offer-bg.jpg') center center / cover no-repeat;
+    &_home {
+        padding: 105px 0 50px;
+    }
+    &__grid {
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 70px;
+        justify-items: flex-end;
+        // margin-left: auto;
+    }
+    &__img {
+        position: relative;
+        img {
+            position: relative;
+            z-index: 1;
+        }
+        &::before {
+            position: absolute;
+            content: url('../img/offer-elem.png');
+            z-index: 0;
+            top: -48px;
+            left: -115px;
+        }
+    }
+    &__text {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 146%;
+        color: #000000;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 1023px) { 
+    .offer {
+        &__grid {
+            column-gap: 30px;
+        }
+        &__img {
+            img {
+                width: 380px;
+                height: 380px;
+            }
+        }
+        &__text {
+            margin-top: 85px;
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 767px) { 
+    .offer {
+        &__wrapper {
+            justify-self: center;
+        }
+        &__grid {
+            column-gap: unset;
+            row-gap: 40px;
+            grid-template-columns: 1fr;
+        }
+        &__img {
+            img {
+                width: 380px;
+                height: 380px;
+            }
+        }
+        &__text {
+            margin-top: 0;
+            text-align: center;
+            font-size: 18px;
+        }
+        &__btn {
+            display: block;
+            max-width: fit-content;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: 575px) { 
+    .offer {
+        &_home {
+            padding: 60px 0;
+        }
+        &__grid {
+            row-gap: 30px;
+        }
+        &__img {
+            img {
+                width: 276px;
+                height: 276px;
+            }
+            &::before {
+                top: -91px;
+                left: -150px;
+                transform: scale(.7);
+            }
+        }
+        &__text {
+            font-size: 14px;
+        }
+    }
+}

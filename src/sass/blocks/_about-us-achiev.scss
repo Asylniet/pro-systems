@@ -1,0 +1,82 @@
+.achieve{
+    .hidden{
+        display: none;
+    }
+    padding-bottom: 110px;
+    &-home{
+
+    }
+    &-title{
+        font-weight: 600;
+        color: #0C478B;
+        margin-bottom: 110px;
+    }
+    &__row{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        &-item{
+            display: flex;
+            position: relative;
+            .achieve__row-info{
+                position: absolute;
+                top: -50px;
+                left: 140px;
+            }
+            &-down{
+                display: flex;
+                position: relative;
+                margin-left: 180px;
+                .achieve__row-info{
+                    position: absolute;
+                    left: -125px;
+                    bottom: 0 !important;
+                }
+            }
+        }
+        &-title{
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 39px;
+            color: #0C478B;
+            margin: 0;
+            padding: 0;
+        }
+        &-span{
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+            color: #000000;
+        }
+    }
+}
+@media(max-width:1250px){
+    .achieve{
+        &__row{
+            grid-template-columns: repeat(1, 340px);
+        }
+        &-rowss{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+@media(max-width:780px){
+    .achieve{
+        .hidden{
+            display: block;
+            margin-top: 0;
+            margin-bottom: 100px;
+        }
+        &-rowss{
+            flex-direction: column;
+            align-items: center;
+        }
+        &__row{
+            &:last-child{
+                display: none;
+            }
+        }
+    }
+}

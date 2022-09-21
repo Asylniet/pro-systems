@@ -1,0 +1,57 @@
+.geography{
+    background: #F5F5F5;
+    padding: 85px 0 35px;
+    position: relative;
+<<<<<<< HEAD
+    &.overflow-hid {
+        overflow: hidden;
+    }
+=======
+>>>>>>> a2a79a9278b79dbef5dcdfbe6d5c2c856cafa67e
+    &__abs1{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    &__abs2{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    &__title{
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 39px;
+        margin-bottom: 30px;
+    }
+    &__subtitle{
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    &__img img{
+        display: block;
+        margin: 0 auto;
+        z-index: 50;
+        position: relative;
+    }
+}
+@media(max-width:780px){
+    .geography{
+        &__img{
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .geography__abs1{
+        left: -100px;
+    }
+    .geography__abs2{
+        display: none;
+    }
+}

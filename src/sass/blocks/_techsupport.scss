@@ -1,0 +1,68 @@
+.techsupport {
+    position: relative;
+    background: url('../img/tech-support-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    &_home {
+        padding: 90px 0;
+        min-height: 600px;
+    }
+    &__title {
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        color: #FFFFFF;
+        max-width: 750px;
+        margin: 0 auto;
+        margin-bottom: 75px;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        &:not(:last-child){
+            margin-bottom: 50px;
+        }
+        &-title{
+            font-family: 'Open Sans';
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 27px;
+            color: #FFFFFF;
+            margin-left: 20px;
+            max-width: 526px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .techsupport {
+        background: url('../img/tech-support-bg-mob.png') center center / cover no-repeat;
+        min-height: unset;
+        padding: 75px 0 45px;
+        &__title {
+            font-size: 24px;
+            line-height: 29px;
+            margin-bottom: 180px;
+        }
+        &__item {
+            &:not(:last-child){
+                margin-bottom: 25px;
+            }
+            &-title {
+                font-size: 14px;
+                line-height: 19px;
+                margin-left: 15px;
+            }
+            &-icon {
+                position: relative;
+                &::before {
+                    content: url('../icons/check-orange-p2.png');
+                }
+                img {
+                    display: none;
+                }
+            }
+        }
+    }
+}

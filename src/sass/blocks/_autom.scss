@@ -1,0 +1,173 @@
+.autom {
+    position: relative;
+    background: #F5F5F5;
+    &::before {
+        position: absolute;
+        content: url('../img/triangle-blue-yellow.png');
+        left: 0;
+        top: 90px;
+    }
+    &_home {
+        padding: 80px 0;
+        min-height: 680px;
+    }
+    &__title {
+        max-width: 750px;
+        margin: 0 auto;
+        margin-bottom: 95px;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__switch {
+        display: grid;
+        grid-template-columns: 320px 350px;
+        column-gap: 100px;
+    }
+    &__list {
+        position: relative;
+        list-style-type: none;
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background-color: #000000;
+            right: -50px;
+            top: 0;
+        }
+        &_reversed {
+            &::after {
+                right: unset;
+                left: -20px;
+            }
+        }
+        &-item {
+            position: relative;
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            color: #000000;
+            cursor: pointer;
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+            &_active {
+                font-weight: 600;
+                color: #E9660B;
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 11px;
+                    height: 11px;
+                    top: 3px;
+                    left: -22px;
+                    background: #E9660B;
+                    border-radius: 1.7px;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+    &__descr {
+        height: 100%;
+        position: relative;
+        display: none;
+        font-family: 'Open Sans';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: #000000;
+        padding: 0 0 60px 32px;
+        &_active {
+            display: block;
+        }
+    }
+    &__btn {
+        position: absolute;
+        bottom: 0;
+    }
+    &__telegram {
+        bottom: 112px;
+        right: 27px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .autom {
+        &__switch {
+            grid-template-columns: 285px 290px;
+            column-gap: 30px;
+        }
+        &__list {
+            &::after {
+                right: -10%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .autom {
+        min-height: auto;
+        padding-bottom: 60px;
+        &__title {
+            margin-bottom: 40px;
+        }
+        &__row {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: unset;
+            align-items: center;
+        }
+        &__switch {
+            display: none;
+            margin-bottom: 40px;
+            grid-template-columns: 285px 1fr;
+            column-gap: 30px;
+        }
+        &__img {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .autom {
+        &__switch {
+            grid-template-columns: 250px 1fr;
+        }
+        &__img {
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .autom {
+        &::before {
+            display: none;
+        }
+        &__switch {
+            grid-template-columns: 1fr;
+        }
+        &__list {
+            &::after {
+                height: 1px;
+                width: 100%;
+                right: unset;
+                left: 0;
+                bottom: -20px;
+                top: unset;
+            }
+            margin-bottom: 40px;
+        }
+        &__telegram {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.software {
+    position: relative;
+    padding: 110px 0;
+    &__title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 39px;
+        text-align: center;
+        color: #000000;
+    }
+    &__wrapper{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 95px;
+        row-gap: 40px;
+        margin-top: 80px;
+    }
+    &__img{
+        img { 
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .software {
+        &__wrapper {
+            column-gap: 18px;
+        }
+        &__title {
+            font-size: 20px;
+            line-height: 24px;
+        }
+        &__img {
+            img {
+                max-width: 160px;
+            }
+        }
+    }
+}

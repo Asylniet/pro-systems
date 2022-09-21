@@ -1,0 +1,160 @@
+.oppties {
+    &_home {
+        padding: 52px 0 110px;
+    }
+    &__title {
+        margin-bottom: 30px;
+        &_sp {
+            max-width: 870px;
+            margin: 0 auto;
+            margin-bottom: 100px;
+        }
+        &_mb {
+            margin-bottom: 100px;
+        }
+    }
+    &__subtitle {
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 100px;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-auto-rows: auto;
+        column-gap: 70px;
+        row-gap: 70px;
+    }
+    &__item {
+        &-icon {
+            position: relative;
+            // left: 50%;
+            display: grid;
+            place-content: center;
+            margin-bottom: 48px;
+            // width: 80px;
+            // height: 80px;
+            // background: #0C478B;
+            // border-radius: 12px;
+            // transform: rotate(45deg) translateX(-50%);
+            img {
+                // transform: rotate(-45deg);
+                max-width: 44px;
+            }
+            &::after {
+                position: absolute;
+                content: url("data:image/svg+xml,%3Csvg width='103' height='103' viewBox='0 0 103 103' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='51.5684' y='-5' width='80' height='80' rx='12.6803' transform='rotate(45 51.5684 -5)' fill='%230C478B'/%3E%3C/svg%3E%0A");
+                z-index: -1;
+                left: 50%;
+                transform: translateX(-50%);
+                top: -28px;
+            }
+            &_numbered {
+                position: relative;
+                max-width: max-content;
+                margin: 0 auto;
+                margin-bottom: 48px;
+                &::before {
+                    position: absolute;
+                    counter-increment: opptItem;
+                    content: counter(opptItem);
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 32px;
+                    line-height: 39px;
+                    color: #E9660B;
+                    top: -45px;
+                    left: -45px;
+                }
+            }
+        }
+        &-title {
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            color: #000000;
+            margin-bottom: 16px;
+        }
+        &-descr {
+            font-family: 'Open Sans';
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+            color: #838383;
+            ul {
+                li {
+                    &:not(:last-child) {
+                        margin-bottom: 1em;
+                    }
+                }
+            }
+        }
+        &-title, &-descr {
+            text-align: center;
+        }
+    }
+}
+
+body {
+    counter-reset: ctr opptItem;
+}
+
+@media (max-width: 1199px) {
+    .oppties {
+        &__grid {
+            column-gap: 30px;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .oppties {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .oppties {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+        &__item {
+            &-descr {
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .oppties {
+        &_home {
+            padding: 52px 0;
+        }
+        &__title {
+            &_mb {
+                margin-bottom: 70px;
+            }
+        }
+        &__item {
+            &-title {
+                font-size: 14px;
+                line-height: 17px;
+            }
+            &-descr {
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+    }
+}

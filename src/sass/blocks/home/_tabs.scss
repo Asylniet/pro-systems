@@ -1,0 +1,246 @@
+.tabs {
+    padding: 60px 0 80px;
+    background: url('../img/home-tabs-bg.jpg') center top / cover no-repeat;
+    &__nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        place-content: center;
+        margin-bottom: 70px;
+        &-btn {
+            display: block;
+            padding: 22px 0;
+            position: relative;
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+            color: #838383;
+            text-align: center;
+            text-decoration: none;
+            &_active {
+                color: #0C478B;
+            }
+            &::before {
+                position: absolute;
+                content: '';
+                background: currentColor;
+                height: 2px;
+                width: 100%;
+                top: 0px;
+                left: 0;
+            }
+            &:hover {
+                color: #0C478B;
+            }
+        }
+    }
+    &__wrapper {
+        position: relative;
+        z-index: 1;
+    }
+    &__tab {
+        display: none;
+        &_active {
+            display: block;
+        }
+    }
+    &__autom {
+        display: grid;
+        grid-template-columns: repeat(2, 480px);
+        place-content: center;
+        grid-auto-rows: 250px;
+        gap: 20px;
+        &-item {
+            position: relative;
+            padding: 8px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-decoration: none;
+            &:hover {
+                .tabs__autom-wrap {
+                    height: 234px;
+                    .tabs__autom-link {
+                        position: static;
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        &-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            img {
+                border-radius: 30px;
+                width: 100%;            
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &-wrap {
+            padding: 20px;
+            background: rgba(12, 71, 139, 0.7);
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80px;
+            transition: height .5s;
+            &:hover {
+            }
+        }
+        &-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: #FFFFFF;
+            max-width: 265px;
+        }
+        &-link {
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            text-decoration: underline;
+            color: #FFFFFF;
+            margin-top: 20px;
+            transition: opacity .7s ease-out;
+            &:hover {
+                color: #FFFFFF;
+            }
+        }
+    }
+    &__prog {
+        // display: grid;
+        // grid-template-columns: repeat(4, 280px);
+        // grid-auto-rows: minmax(216px, auto);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        &-item {
+            width: 280px;
+            min-height: 216px;
+            border: 2px solid #FDCE25;
+            border-radius: 30px;
+            padding: 14px;
+            padding-bottom: 10px;
+            display: grid;
+            grid-template-rows: 150px auto;
+            row-gap: 9px;
+            place-content: center;
+            justify-items: center;
+            align-items: center;
+            transition: background .3s;
+            text-decoration: none;
+            &:hover {
+                background: #FDCE25;
+            }
+        }
+        &-img {
+            // max-width: fit-content;
+        }
+        &-link {
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 18px;
+            text-decoration: none;
+            text-align: center;
+            color: #000000;
+            text-decoration: none;
+            &:hover {
+                color: #000000;
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .tabs {
+        &__autom {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .tabs {
+        &__prog {
+            &-item {
+                width: 250px;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .tabs {
+        padding-bottom: 40px;
+        &__autom {
+            grid-template-columns: 1fr;
+        }
+        &__nav {
+            // display: flex;
+            display: none;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 55px;
+            &-btn {
+                padding: 0;
+                width: 100%;
+                display: block;
+                font-size: 16px;
+                line-height: 20px;
+                padding: 20px 0;
+                text-align: left;
+                margin-bottom: 20px;
+                &::before {
+                    height: 1px;
+                    top: unset;
+                    bottom: 0px;
+                }
+                &::after {
+                    content: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.0002 19.3749C14.8357 19.3758 14.6726 19.3443 14.5203 19.2821C14.3681 19.2199 14.2295 19.1282 14.1127 19.0124L9.11273 14.0124C8.99618 13.8958 8.90373 13.7575 8.84066 13.6052C8.77758 13.4529 8.74512 13.2897 8.74512 13.1249C8.74512 12.96 8.77758 12.7968 8.84066 12.6446C8.90373 12.4923 8.99618 12.3539 9.11273 12.2374C9.22928 12.1208 9.36764 12.0284 9.51992 11.9653C9.6722 11.9022 9.83541 11.8698 10.0002 11.8698C10.1651 11.8698 10.3283 11.9022 10.4805 11.9653C10.6328 12.0284 10.7712 12.1208 10.8877 12.2374L15.0002 16.3749L19.1252 12.3999C19.2402 12.272 19.3804 12.1692 19.5369 12.098C19.6934 12.0268 19.8629 11.9886 20.0349 11.9859C20.2068 11.9832 20.3775 12.0159 20.5362 12.0822C20.6948 12.1484 20.8382 12.2467 20.9571 12.3708C21.0761 12.495 21.1682 12.6424 21.2276 12.8037C21.2871 12.9651 21.3126 13.137 21.3025 13.3087C21.2925 13.4803 21.2471 13.6481 21.1693 13.8014C21.0915 13.9548 20.9829 14.0904 20.8502 14.1999L15.8502 19.0249C15.6216 19.2453 15.3177 19.3704 15.0002 19.3749Z' fill='%23838383'/%3E%3C/svg%3E%0A");
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &_active {
+                    &::after {
+                        content: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.0002 19.3749C14.8357 19.3758 14.6726 19.3443 14.5203 19.2821C14.3681 19.2199 14.2295 19.1282 14.1127 19.0124L9.11273 14.0124C8.99618 13.8958 8.90373 13.7575 8.84066 13.6052C8.77758 13.4529 8.74512 13.2897 8.74512 13.1249C8.74512 12.96 8.77758 12.7968 8.84066 12.6446C8.90373 12.4923 8.99618 12.3539 9.11273 12.2374C9.22928 12.1208 9.36764 12.0284 9.51992 11.9653C9.6722 11.9022 9.83541 11.8698 10.0002 11.8698C10.1651 11.8698 10.3283 11.9022 10.4805 11.9653C10.6328 12.0284 10.7712 12.1208 10.8877 12.2374L15.0002 16.3749L19.1252 12.3999C19.2402 12.272 19.3804 12.1692 19.5369 12.098C19.6934 12.0268 19.8629 11.9886 20.0349 11.9859C20.2068 11.9832 20.3775 12.0159 20.5362 12.0822C20.6948 12.1484 20.8382 12.2467 20.9571 12.3708C21.0761 12.495 21.1682 12.6424 21.2276 12.8037C21.2871 12.9651 21.3126 13.137 21.3025 13.3087C21.2925 13.4803 21.2471 13.6481 21.1693 13.8014C21.0915 13.9548 20.9829 14.0904 20.8502 14.1999L15.8502 19.0249C15.6216 19.2453 15.3177 19.3704 15.0002 19.3749Z' fill='%230C478B'/%3E%3C/svg%3E");
+                    }
+                }
+            }
+        }
+        &__prog {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(50%, 1fr));
+            gap: 15px;
+            &-item {
+                width: auto;
+            }
+            &-img {
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

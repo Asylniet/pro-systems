@@ -1,0 +1,92 @@
+.clients {
+    &_home {
+        padding: 100px 0;
+    }
+    &_main {
+        padding: 60px 0;
+    }
+    &_sc {
+        padding: 100px 0 10px;
+    }
+    &_fisc {
+        padding: 60px 0 10px;
+    }
+    &__slider {
+        width: 100%;
+        height: auto;
+    }
+    &__slide {
+        width: 280px;
+        display: grid;
+        place-content: center;
+        img {
+            max-width: 100%;
+        }
+    }
+    &__wrapper {
+        position: relative;
+    }
+    &__title {
+        margin-bottom: 74px;
+    }
+    .swiper {
+        &-button {
+            &-prev {
+                right: auto;
+                left: -30px;
+            }
+            &-next {
+                left: auto;
+                right: -30px;
+            }
+            &-prev, &-next {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .clients {
+        .swiper {
+            &-button {
+                &-prev {
+                    left: 0px;
+                }
+                &-next {
+                    right: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .clients {
+        .swiper {
+            &-button {
+                &-prev {
+                    left: 36%;
+                }
+                &-next {
+                    right: 36%;
+                }
+                &-prev, &-next {
+                    top: unset;
+                    bottom: -45px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .clients {
+        &__title {
+            margin-bottom: 40px;
+        }
+    }
+}

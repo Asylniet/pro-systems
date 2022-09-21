@@ -1,0 +1,120 @@
+.mission{
+    position: relative;
+    &-home{
+        min-height: 560px;
+        margin-bottom: 110px;
+    }
+    &__wrapper{
+        padding-top: 110px;
+        position: relative;
+        max-width: 1440px;
+        img{
+            position: absolute;
+            top: -3px;
+        }
+    }
+    &__absolute{
+        position: absolute;
+        bottom: 0;
+        right: 130px;
+    }
+    &__title{
+        font-weight: 600;
+        color: #0C478B;
+        margin-bottom: 65px;
+    }
+    &__texts{
+        right: 0;
+        position: absolute;
+    }
+    &__subtitle{
+        font-family: 'Open Sans';
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        color: #000000;
+        max-width: 560px;
+    }
+    &__sb1{
+        position: relative;
+        right: 235px;
+    }
+    &__sb2{
+        position: relative;
+        right: 175px;
+        top: 15px;
+        max-width: 530px;
+    }
+}
+@media(max-width:1370px){
+    .mission{
+        &__wrapper{
+            padding-top: 50px;
+            max-width: 1024px;
+            img{
+                left: -50px;
+                max-width: 600px;
+            }
+        }
+        &__subtitle{
+            display: flex;
+            justify-content: flex-end;
+        }
+        &__sb1 {
+            right: 60px;
+        }
+        &__sb2 {
+            right: 0px;
+        }
+        &__absolute {
+            right: 0;
+            bottom: 50px;
+        }
+    }
+}
+
+@media(max-width:1023px){
+    .mission{
+        &__texts{
+            position: static;
+        }
+        &__subtitle{
+            position: static;
+            justify-content: flex-start;
+            max-width: 100%;
+        }
+        &__info{
+            padding: 0 12px;
+        }
+        &__wrapper{
+            img{
+                margin-top: 50px;
+                position: static;
+                max-width: 100%;
+            }
+        }
+        &__absolute{
+            display: block;
+            bottom: 150px; 
+            right: 0;
+        }
+    }
+}
+@media(max-width:576px){
+    .mission__wrapper img {
+        width: 330px;
+    }
+    .mission{
+        &__title {
+            margin-bottom: 40px;
+        }
+        &__subtitle {
+            font-size: 14px;
+            line-height: 19px;
+        }
+        &__absolute{
+            bottom: 120px;
+            width: 130px;
+        }
+    }
+}
