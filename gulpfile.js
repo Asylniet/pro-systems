@@ -7,25 +7,6 @@ const rename = require("gulp-rename");
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
 
-const { task } = require('gulp');
-
-const clean = function(cb) {
-  // body omitted
-  cb();
-};
-clean.displayName = 'clean:all';
-
-task(clean);
-
-function build(cb) {
-  // body omitted
-  cb();
-}
-build.description = 'Build the project';
-build.flags = { '-e': 'An example flag' };
-
-task(build);
-
 gulp.task('server', function() {
 
     browserSync({
