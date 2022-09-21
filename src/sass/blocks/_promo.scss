@@ -1,416 +1,410 @@
 .promo {
-    overflow: hidden;
+  overflow: hidden;
+  position: relative;
+  padding: 130px 0;
+  background: url("../img/squares-gray-bg.jpg") center center / cover no-repeat;
+  &::before {
+    position: absolute;
+    content: url("../img/triangle-yellow-3.png");
+    left: 0;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 59px;
+    &_small {
+      font-size: 42px;
+      line-height: 51px;
+    }
+  }
+  &__subtitle {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+  }
+  &__descr {
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 45px;
+    &_big {
+      font-family: "Montserrat";
+      font-size: 24px;
+      line-height: 33px;
+      margin-bottom: 30px;
+    }
+    &_sc {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+  &__title,
+  &__subtitle,
+  &__descr {
+    color: #000000;
+    max-width: 530px;
+  }
+  &__title,
+  &__subtitle {
+    font-family: "Montserrat";
+    margin-bottom: 30px;
+  }
+  &__title {
+    &_fisc {
+      margin-bottom: 50px;
+    }
+  }
+  &__row {
     position: relative;
-    padding: 130px 0;
-    background: url('../img/squares-gray-bg.jpg') center center / cover no-repeat;
+    z-index: 1;
+  }
+  &__img {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    &_sc {
+      top: -60px;
+      right: -100px;
+    }
+  }
+  &__vid-wrap {
+    position: absolute;
+    top: 0px;
+    right: 81px;
     &::before {
-        position: absolute;
-        content: url('../img/triangle-yellow-3.png'); 
-        left: 0;      
+      position: absolute;
+      content: url("../img/promo-img-elem.png");
+      top: -40px;
+      right: -130px;
     }
-    &__title {
-        font-weight: 500;
-        font-size: 48px;
-        line-height: 59px;
-        &_small {
-            font-size: 42px;
-            line-height: 51px;
-        }
+    &.neo-fiscal::before {
+      content: url("../img/neo-fiscal-promo.png");
     }
-    &__subtitle {
-        font-weight: 400;
-        font-size: 36px;
-        line-height: 44px;
+  }
+  &__vid {
+    clip-path: url(#promoClipPath1);
+    cursor: pointer;
+    position: absolute;
+    right: -80px;
+    iframe,
+    video {
+      height: 500px; //540
+      width: 620px; //540
+      object-fit: cover;
     }
-    &__descr {
-        font-family: 'Open Sans';
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 22px;
-        margin-bottom: 45px;
-        &_big {
-            font-family: 'Montserrat';
-            font-size: 24px;
-            line-height: 33px;
-            margin-bottom: 30px;
-        }
-        &_sc {
-            font-size: 20px;
-            line-height: 24px;
-        }
+  }
+  &__svg {
+    position: absolute;
+    rect {
+      // transform: translate(2px, -200px) rotate(45deg);
+      width: 390px;
+      height: 390px;
     }
-    &__title, &__subtitle, &__descr {
-        color: #000000;
-        max-width: 530px;
+  }
+  &__popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    &_active {
+      visibility: visible;
+      opacity: 1;
     }
-    &__title, &__subtitle {
-        font-family: 'Montserrat';
-        margin-bottom: 30px;
+    &-play {
+      border-radius: 30px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 1);
+      display: grid;
+      place-content: center;
+      transition: all 0.3s;
+      button {
+        background: transparent;
+        outline: 0;
+        border: 0;
+      }
     }
-    &__title {
-        &_fisc {
-            margin-bottom: 50px;
-        }
-    }
-    &__row {
+    &-vid {
+      position: relative;
+      border-radius: 30px;
+      video {
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+      }
+      &-wrap {
         position: relative;
-        z-index: 1;
+        max-width: 714px;
+        height: 415px;
+      }
     }
-    &__img {
-        position: absolute;
-        top: -100px;
-        right: -100px;
-        &_sc {
-            top: -60px;
-            right: -100px;
-        }
+    &-close {
+      position: absolute;
+      top: -75px;
+      right: -160px;
+      background: transparent;
+      outline: 0;
+      border: 0;
+      cursor: pointer;
     }
-    &__vid-wrap {
-        position: absolute;
-        top: 0px;
-        right: 81px;
+  }
+  // &__play {
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: center;
+  //     align-items: center;
+  //     position: absolute;
+  //     top: 50%;
+  //     transform: translate(-50%, -50%);
+  //     left: 43%;
+  //     text-decoration: none;
+  //     &-icon {
+  //         margin-bottom: 20px;
+  //     }
+  //     &-text {
+  //         font-family: 'Open Sans';
+  //         font-weight: 700;
+  //         font-size: 16px;
+  //         line-height: 22px;
+  //         color: #FFF;
+  //     }
+  // }
+  &__text {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #838383;
+    max-width: 450px;
+    margin-bottom: 90px;
+    &_sc {
+      font-size: 14px;
+      line-height: 19px;
+      margin-bottom: 40px;
+    }
+    ul {
+      list-style: none;
+      li {
+        position: relative;
         &::before {
-            position: absolute;
-            content: url('../img/promo-img-elem.png');
-            top: -40px;
-            right: -130px;
+          content: url("../icons/check-orange.png");
+          position: absolute;
+          left: -38px;
+          top: -2px;
         }
-<<<<<<< HEAD
-        &.neo-fiscal::before {
-            content: url('../img/neo-fiscal-promo.png')
+        &:not(:last-child) {
+          margin-bottom: 30px;
         }
-=======
->>>>>>> a2a79a9278b79dbef5dcdfbe6d5c2c856cafa67e
+      }
     }
-    &__vid {
-        clip-path: url(#promoClipPath1);
-        cursor: pointer;
-        position: absolute;
-        right: -80px;
-        iframe, video {
-            height: 500px;//540
-            width: 620px;//540
-            object-fit: cover;
-        }
-    }
-    &__svg {
-        position: absolute;
-        rect {
-            // transform: translate(2px, -200px) rotate(45deg);
-            width: 390px;
-            height: 390px;
-        }
-    }
-    &__popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.8);
-        width: 100vw;
-        height: 100vh;
-        display: grid;
-        place-content: center;
-        z-index: 1000;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity .3s;
-        &_active {
-            visibility: visible;
-            opacity: 1;
-        }
-        &-play {
-            border-radius: 30px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 1);
-            display: grid;
-            place-content: center;
-            transition: all .3s;
-            button {
-                background: transparent;
-                outline: 0;
-                border: 0;
-            }
-        }
-        &-vid {
-            position: relative;
-            border-radius: 30px;
-            video {
-                width: 100%;
-                height: 100%;
-                border-radius: 30px;
-            }
-            &-wrap {
-                position: relative;
-                max-width: 714px;
-                height: 415px;
-            }
-        }
-        &-close {
-            position: absolute;
-            top: -75px;
-            right: -160px;
-            background: transparent;
-            outline: 0;
-            border: 0;
-            cursor: pointer;
-        }
-    }
-    // &__play {
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: center;
-    //     align-items: center;
-    //     position: absolute;
-    //     top: 50%;
-    //     transform: translate(-50%, -50%);
-    //     left: 43%;
-    //     text-decoration: none;
-    //     &-icon {
-    //         margin-bottom: 20px;
-    //     }
-    //     &-text {
-    //         font-family: 'Open Sans';
-    //         font-weight: 700;
-    //         font-size: 16px;
-    //         line-height: 22px;
-    //         color: #FFF;
-    //     }
-    // }
-    &__text {
-        font-family: 'Open Sans';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 25px;
-        color: #838383;
-        max-width: 450px;
-        margin-bottom: 90px;
-        &_sc {
-            font-size: 14px;
-            line-height: 19px;
-            margin-bottom: 40px;
-        }
-        ul {
-            list-style: none;
-            li {
-                position: relative;
-                &::before {
-                    content: url('../icons/check-orange.png');
-                    position: absolute;
-                    left: -38px;
-                    top: -2px;
-                }
-                &:not(:last-child) {
-                    margin-bottom: 30px;
-                }
-            }
-        }
-    }
+  }
 }
 
 @media (max-width: 1199px) {
-    .promo {
-        &__img {
-            top: -82px;
-            right: -81px;
-            img {
-                width: 560px;
-            }
-        }
-        &__vid-wrap {
-            top: 29px;
-            right: 53px;
-        }
-        &__svg {
-            rect {
-                width: 350px;
-                height: 350px;
-            }
-        }
-        &__popup {
-            &-close {
-                top: -60px;
-                right: -65px;
-            }
-        }
+  .promo {
+    &__img {
+      top: -82px;
+      right: -81px;
+      img {
+        width: 560px;
+      }
     }
+    &__vid-wrap {
+      top: 29px;
+      right: 53px;
+    }
+    &__svg {
+      rect {
+        width: 350px;
+        height: 350px;
+      }
+    }
+    &__popup {
+      &-close {
+        top: -60px;
+        right: -65px;
+      }
+    }
+  }
 }
 
 @media (max-width: 1023px) {
-    .promo {
-        &__title {
-            font-size: 44px;
-            line-height: 53px;
-            margin-bottom: 20px;
-        }
-        &__subtitle {
-            font-size: 34px;
-            line-height: 39px;
-            margin-bottom: 20px;
-        }
-        &__descr {
-            max-width: 460px;
-        }
-        &__img {
-            top: -46px;
-            right: -154px;
-            img {
-                width: 456px;
-            }
-        }
-        &__vid-wrap {
-            top: 65px;
-            right: -115px;
-            &::before {
-                content: url('../img/promo-img-elem-2.png');
-                right: -13px;
-            }
-<<<<<<< HEAD
-            &.neo-fiscal::before {
-                content: url('../img/neo-fiscal-2.png')
-            }
-=======
->>>>>>> a2a79a9278b79dbef5dcdfbe6d5c2c856cafa67e
-        }
-        &__svg {
-            rect {
-                width: 300px;
-                height: 300px;
-            }
-        }
-        &__popup {
-            &-close {
-                top: -40px;
-                right: 0px;
-            }
-        }
+  .promo {
+    &__title {
+      font-size: 44px;
+      line-height: 53px;
+      margin-bottom: 20px;
     }
+    &__subtitle {
+      font-size: 34px;
+      line-height: 39px;
+      margin-bottom: 20px;
+    }
+    &__descr {
+      max-width: 460px;
+    }
+    &__img {
+      top: -46px;
+      right: -154px;
+      img {
+        width: 456px;
+      }
+    }
+    &__vid-wrap {
+      top: 65px;
+      right: -115px;
+      &::before {
+        content: url("../img/promo-img-elem-2.png");
+        right: -13px;
+      }
+      &.neo-fiscal::before {
+        content: url("../img/neo-fiscal-2.png");
+      }
+    }
+    &__svg {
+      rect {
+        width: 300px;
+        height: 300px;
+      }
+    }
+    &__popup {
+      &-close {
+        top: -40px;
+        right: 0px;
+      }
+    }
+  }
 }
 
 @media (max-width: 767px) {
-    .promo {
-        padding: 50px 0 70px;
-        &__title, &__subtitle, &__descr {
-            text-align: center;
-        }
-        &__title {
-            font-size: 32px;
-            line-height: 39px;
-            margin-bottom: 30px;
-        }
-        &__subtitle {
-            font-size: 24px;
-            line-height: 28px;
-            margin-bottom: 20px;
-        }
-        &__descr {
-            margin-bottom: 30px;
-            font-size: 18px;
-            line-height: 26px;
-        }
-        &__text {
-            margin-bottom: 15px;
-            font-size: 16px;
-            line-height: 22px;
-        }
-        &__img {
-            position: static;
-            margin-bottom: 20px;
-            img {
-                width: unset;
-                max-width: 100%;
-            }
-        }
-        &__row {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        &__vid-wrap {
-            position: relative;
-            top: unset;
-            right: unset;
-            &::before {
-                right: 69px;
-            }
-        }
-        &__vid {
-            position: static;
-            iframe, video {
-                height: 380px;
-            }
-        }
+  .promo {
+    padding: 50px 0 70px;
+    &__title,
+    &__subtitle,
+    &__descr {
+      text-align: center;
     }
+    &__title {
+      font-size: 32px;
+      line-height: 39px;
+      margin-bottom: 30px;
+    }
+    &__subtitle {
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 20px;
+    }
+    &__descr {
+      margin-bottom: 30px;
+      font-size: 18px;
+      line-height: 26px;
+    }
+    &__text {
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    &__img {
+      position: static;
+      margin-bottom: 20px;
+      img {
+        width: unset;
+        max-width: 100%;
+      }
+    }
+    &__row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__vid-wrap {
+      position: relative;
+      top: unset;
+      right: unset;
+      &::before {
+        right: 69px;
+      }
+    }
+    &__vid {
+      position: static;
+      iframe,
+      video {
+        height: 380px;
+      }
+    }
+  }
 }
 
 @media (max-width: 575px) {
-    .promo {
-        padding: 70px 0 80px;
-        &::before {
-            display: none;
-        }
-        &__title {
-            font-size: 32px;
-            line-height: 39px;
-        }
-        &__subtitle {
-            font-size: 18px;
-            line-height: 22px;
-        }
-        &__descr {
-            font-size: 14px;
-            line-height: 18px;
-            &_big {
-                font-size: 16px;
-                line-height: 20px;
-            }
-        }
-        &__text {
-            font-size: 12px;
-            line-height: 16px;
-        }
-        &__vid-wrap {
-            &::before {
-                content: url('../img/promo-img-elem-mob.png');
-                right: 125px;
-                bottom: 13px;
-                top: unset;
-            }
-<<<<<<< HEAD
-            &.neo-fiscal::before {
-                content: url('../img/neo-fiscal-mob.png')
-            }
-=======
->>>>>>> a2a79a9278b79dbef5dcdfbe6d5c2c856cafa67e
-        }
-        &__vid {
-            video {
-                position: relative;
-                top: -17px;
-                height: 230px;
-                width: 560px;
-            }
-        }
-        &__popup {
-            &-vid-wrap {
-                height: auto;
-            }
-        }
-        &__svg {
-            rect {
-                width: 173px;
-                height: 173px;
-<<<<<<< HEAD
-                // rx: 30;
-=======
-                rx: 30;
->>>>>>> a2a79a9278b79dbef5dcdfbe6d5c2c856cafa67e
-            }
-        }
+  .promo {
+    padding: 70px 0 80px;
+    &::before {
+      display: none;
     }
+    &__title {
+      font-size: 32px;
+      line-height: 39px;
+    }
+    &__subtitle {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    &__descr {
+      font-size: 14px;
+      line-height: 18px;
+      &_big {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+    &__text {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &__vid-wrap {
+      &::before {
+        content: url("../img/promo-img-elem-mob.png");
+        right: 125px;
+        bottom: 13px;
+        top: unset;
+      }
+      &.neo-fiscal::before {
+        content: url("../img/neo-fiscal-mob.png");
+      }
+    }
+    &__vid {
+      video {
+        position: relative;
+        top: -17px;
+        height: 230px;
+        width: 560px;
+      }
+    }
+    &__popup {
+      &-vid-wrap {
+        height: auto;
+      }
+    }
+    &__svg {
+      rect {
+        width: 173px;
+        height: 173px;
+        // rx: 30;
+        rx: 30;
+      }
+    }
+  }
 }
-

@@ -37,8 +37,6 @@
   &__row {
     display: flex;
     justify-content: center;
-    &:first-child {
-    }
   }
   &__item {
     width: 280px;
@@ -64,8 +62,6 @@
         background: url("../img/yellowbg.png");
         background-size: contain;
         background-repeat: no-repeat;
-      }
-      img {
       }
     }
   }
