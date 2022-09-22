@@ -1,0 +1,303 @@
+.manf {
+  padding: 90px 0;
+  background: #0c478b;
+  &.geography__wrapper {
+    padding: 0;
+    background: none;
+    .manf__row {
+      align-items: flex-start;
+      &:first-child {
+        margin-bottom: 20px;
+      }
+    }
+    .manf__item {
+      height: auto;
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+      &-img,
+      &-img:hover,
+      &-img img {
+        height: 80px;
+        width: 80px;
+        background: none;
+      }
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 45px;
+    span {
+      color: #fdce25;
+    }
+  }
+  &__row {
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+    width: 280px;
+    height: 280px;
+    margin-right: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:last-child {
+      margin-right: 0;
+    }
+    &-img {
+      background: url("../img/whitebg.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: all 0.3s;
+      height: 280px;
+      width: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background: url("../img/yellowbg.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .manf {
+    .manf__item-img {
+      background: url("../img/whitebg.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: all 0.3s;
+      height: 230px;
+      width: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+@media (max-width: 990px) {
+  .manf {
+    &__title {
+      br {
+        display: none;
+      }
+    }
+    .manf__item-img {
+      background: url("../img/whitebg.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: all 0.3s;
+      height: 200px;
+      width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:nth-child(3) {
+        img {
+          width: 70px;
+        }
+      }
+      img {
+        width: 120px;
+      }
+    }
+    &__item {
+      margin-right: 30px;
+      &:nth-child(3) {
+        .manf__item-img {
+          img {
+            width: 90px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 650px) {
+  .manf {
+    position: relative;
+    &.geography__wrapper {
+      padding-bottom: 160px;
+      .manf__row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        flex: 1 1;
+        min-width: 130px;
+      }
+      .special650 {
+        position: absolute;
+        bottom: -160px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 100%;
+      }
+      .manf__item {
+        margin-bottom: 10px;
+      }
+    }
+    &__rows {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    &__item {
+      width: 200px;
+    }
+    &__row {
+      flex-direction: column;
+      &:last-child {
+        .manf__item {
+          margin-right: 0;
+          margin-bottom: 0;
+        }
+        position: absolute;
+        top: calc(50% - 280px);
+        right: 0;
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  .manf__title {
+    font-size: 16px;
+    line-height: 184%;
+  }
+}
+.manf {
+  padding: 90px 0;
+  background: #0c478b;
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 45px;
+    span {
+      color: #fdce25;
+    }
+  }
+  &__row {
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 280px;
+    margin-right: 120px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &-img {
+      background: url("../img/whitebg.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: all 0.3s;
+      height: 280px;
+      width: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background: url("../img/yellowbg.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .manf {
+    .manf__item-img {
+      background: url("../img/whitebg.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: all 0.3s;
+      height: 230px;
+      width: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+@media (max-width: 990px) {
+  .manf {
+    &__title {
+      br {
+        display: none;
+      }
+    }
+    .manf__item-img {
+      background: url("../img/whitebg.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: all 0.3s;
+      height: 200px;
+      width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:nth-child(3) {
+        img {
+          width: 70px;
+        }
+      }
+      img {
+        width: 120px;
+      }
+    }
+    &__item {
+      margin-right: 30px;
+      &:nth-child(3) {
+        .manf__item-img {
+          img {
+            width: 90px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 650px) {
+  .manf {
+    position: relative;
+    &__rows {
+      position: relative;
+    }
+    &__item {
+      width: 200px;
+    }
+    &__row {
+      flex-direction: column;
+      &:last-child {
+        .manf__item {
+          margin-right: 0;
+          margin-bottom: 0;
+        }
+        position: absolute;
+        top: calc(50% - 280px);
+        right: 0;
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  .manf__title {
+    font-size: 16px;
+    line-height: 184%;
+  }
+}

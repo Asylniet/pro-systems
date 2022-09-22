@@ -1,0 +1,100 @@
+.fisc-solution {
+    background: #F5F5F5;
+    padding: 82px 0;
+    &__subtitle {
+        font-family: 'Open Sans';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px;
+        color: #838383;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 265px);
+        grid-auto-rows: auto;
+        column-gap: 40px;
+        place-content: center;
+        margin-bottom: 45px;
+    }
+    &__text {
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+    }
+    &__subtitle, &__text {
+        max-width: 620px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    &__title, &__subtitle, &__text {
+        margin-bottom: 30px;
+    }
+    &__btn {
+        display: block;
+        max-width: fit-content;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1199px) {
+    .fisc-solution {
+        &__img {
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+        &__grid {
+            grid-template-columns: repeat(4,230px);
+            column-gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .fisc-solution {
+        &__grid {
+            grid-template-columns: repeat(2,250px);
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .fisc-solution {
+        &__img {
+            img {
+                max-width: 250px;
+            }
+            &:nth-child(2n) {
+                align-self: flex-end;
+            }
+            &:not(:first-child) {
+                margin-top: -50px;
+            }
+        }
+        &__grid {
+            display: flex;
+            flex-direction: column;
+        }
+        &__subtitle {
+            font-size: 14px;
+            line-height: 17px;
+        }
+        &__title {
+            font-size: 16px;
+            line-height: 20px;
+            span {
+                display: block;
+                font-size: 24px;
+                line-height: 29px;
+                margin-bottom: .5em;
+            }
+        }
+        &__text {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}
